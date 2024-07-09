@@ -4,6 +4,7 @@
 // src/components/HomePage/HomePage.jsx
 
 import React from 'react';
+import './HomePage.scss';
 
 const HomePage = () => {
   return (

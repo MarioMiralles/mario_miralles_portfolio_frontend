@@ -5,6 +5,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './ProjectList.scss';
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
