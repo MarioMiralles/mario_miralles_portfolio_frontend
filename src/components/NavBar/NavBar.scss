@@ -17,15 +17,10 @@
         padding: 0.5rem;
         display: flex;
         justify-content: center;
-
-        &-a {
-            text-decoration: none;
-        }
     }
 
     &__links {
         @include display(row, space-between, nowrap);
-        list-style-type: none;
         width: 100%;
         padding: 0.5rem 0;
         @include tablet {

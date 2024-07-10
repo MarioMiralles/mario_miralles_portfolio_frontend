@@ -11,7 +11,7 @@ import './NavBar.scss';
 const NavBar = () => {
   return (
     <nav className="nav">
-      <img className="nav__logo" src={logo} alt="logo" />
+      <a href="/"><img className="nav__logo" src={logo} alt="logo" /></a>
       <ul className='nav__links'>
         <li className='nav__link'>
           <Link className='nav__link-a' to="/projects">Projects</Link>

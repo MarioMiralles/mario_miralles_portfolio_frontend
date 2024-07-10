@@ -12,8 +12,9 @@ const ProjectList = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/projects/')
+    axios.get('http://127.0.0.1:8000/api/projects/')
       .then(response => {
+        console.log(response.data);
         setProjects(response.data);
       })
       .catch(error => {

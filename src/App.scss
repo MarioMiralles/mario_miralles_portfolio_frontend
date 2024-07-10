@@ -9,6 +9,11 @@
     font-family: 'Courier New', Courier, monospace;
     background-color: $background1;
     color: white;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .main {
