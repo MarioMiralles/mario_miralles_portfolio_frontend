@@ -5,7 +5,7 @@
 .home {
     @include desktop {
         @include display(row, space-between, nowrap);
-        gap: 16rem;
+        gap: 3rem;
     }
 
     &__article {
@@ -18,19 +18,49 @@
             padding: 1rem;
 
             @include desktop {
-                flex-direction: column;
-                width: 50%;
+                width: 40%;
+                margin: auto;
             }
         }
     }
 
-    &__img {
+    &__img, &__link {
         width: 5rem;
         height: 5rem;
+
+        @include desktop {
+            width: 8rem;
+            height: 8rem;
+        }
     }
 
-    &__link {
-        width: 5rem;
-        height: 5rem;
+    &__img {
+        &--github {
+            &:hover {
+                border-radius: 5rem;
+                box-shadow: 0 0 30px white;
+            }
+        }
+        &--linkedin {
+            &:hover {
+                border-radius: 1rem;
+                box-shadow: 0 0 30px #2197BD;
+                @include desktop {
+                    border-radius: 1.25rem;
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        @include desktop {
+            line-height: 1.5rem;
+        }
+    }
+
+    &__title {
+        @include tablet {
+            font-size: 2rem;
+        }
     }
 }

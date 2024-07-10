@@ -4,37 +4,49 @@
 // src/components/ProjectDetail/ProjectDetail.jsx
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import './ProjectDetail.scss';
 
-const ProjectDetail = () => {
-  const { id } = useParams();
-  const [project, setProject] = useState(null);
+const ProjectDetail = ({ project, onClose }) => {
+  const [featureImage, setFeatureImage] = useState(project.images[1].image); // Skip the first image
 
+  // Prevent background from scrolling when modal is open
   useEffect(() => {
-    axios.get(`/api/projects/${id}/`)
-      .then(response => {
-        setProject(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching project: ', error);
-      });
-  }, [id]);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
-  if (!project) return <div>Loading...</div>;
+  const handleImageClick = (image) => {
+    setFeatureImage(image.image);
+  };
 
   return (
-    <div>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-      <a href={project.link} target='_blank' rel='noopener noreferrer'>View Project</a>
-      <div className="images">
-        {project.images.map(image => (
-          <img key={image.id} src={image.image} alt={project.title} />
-        ))}
+    <article className="modal">
+      <div className="modal__content">
+        <span className="modal__close" onClick={onClose}>&times;</span>
+        <img className="modal__feature-image" src={featureImage} alt={project.title} />
+        <section className="modal__images">
+          {project.images
+            .slice(1)
+            .filter((image) => image.image !== featureImage)
+            .map((image, index) => (
+              <img 
+                className="modal__image" 
+                key={image.id} 
+                src={image.image} 
+                alt={`${project.title} ${index + 2}`} 
+                onClick={() => handleImageClick(image)}
+              />
+          ))}
+        </section>
+        <section className="modal__details">
+        <h2 className="modal__title">{project.title}</h2>
+        <p className="modal__description">{project.description}</p>
+        <a className="modal__link" href={project.link} target='_blank' rel='noopener noreferrer'>View Project</a>
+        </section>
       </div>
-    </div>
+    </article>
   );
 };
 

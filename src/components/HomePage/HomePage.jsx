@@ -27,9 +27,9 @@ const HomePage = () => {
       </article>
       <article className='home__article--social'>
         <a className='home__link' href='https://www.linkedin.com/in/mariofmiralles/' target='_blank' rel='noreferrer'>
-          <img className='home__img' src={linkedin} alt='Mario Miralles LinkedIn Profile' /></a>
+          <img className='home__img home__img--linkedin' src={linkedin} alt='Mario Miralles LinkedIn Profile' /></a>
         <a className='home__link' href='https://github.com/MarioMiralles' target='_blank' rel='noreferrer'>
-          <img className='home__img' src={github} alt='Mario Miralles GitHub Profile' /></a>
+          <img className='home__img home__img--github' src={github} alt='Mario Miralles GitHub Profile' /></a>
       </article>
     </main>
   );

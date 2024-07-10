@@ -14,8 +14,15 @@
         padding: 1rem;
         background-color: rgba(0, 0, 0, 0.25);
         border-radius: 1rem;
+        @include tablet {
+            width: 50%;
+        }
         @include desktop{
             width: 25%;
+        }
+        &:hover{
+            box-shadow: 0 0 20px black;
+            cursor: pointer;
         }
     }
 
@@ -23,7 +30,7 @@
         @include display(column, center, nowrap);
         gap: 1.5rem;
 
-        @include desktop {
+        @include tablet {
             @include display(row, flex-start, nowrap);
         }
     }

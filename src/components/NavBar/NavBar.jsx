@@ -4,7 +4,7 @@
 // src/components/NavBar/NavBar.jsx
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo-full.svg';
 import './NavBar.scss';
 
@@ -14,10 +14,18 @@ const NavBar = () => {
       <a href="/"><img className="nav__logo" src={logo} alt="logo" /></a>
       <ul className='nav__links'>
         <li className='nav__link'>
-          <Link className='nav__link-a' to="/projects">Projects</Link>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? 'nav__link-a nav__link-a--active' : 'nav__link-a'
+            }>Projects</NavLink>
         </li>
         <li className='nav__link'>
-          <Link className='nav__link-a' to="/contact">Contact</Link>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? 'nav__link-a nav__link-a--active' : 'nav__link-a'
+            }>Contact</NavLink>
         </li>
       </ul>
     </nav>
