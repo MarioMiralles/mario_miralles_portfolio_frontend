@@ -1,0 +1,40 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.nav {
+    @include display(column, center, nowrap);
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    @include tablet {
+        @include display(row, space-between, nowrap);
+        padding: 2rem 2rem 2rem 1rem;
+    }
+
+    &__link {
+        width: 100%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+
+        &-a {
+            text-decoration: none;
+        }
+    }
+
+    &__links {
+        @include display(row, space-between, nowrap);
+        list-style-type: none;
+        width: 100%;
+        padding: 0.5rem 0;
+        @include tablet {
+            max-width: 25rem;
+        }
+    }
+
+    &__logo {
+        width: 100vw;
+        max-width: 25rem;
+    }
+}
