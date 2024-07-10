@@ -1,3 +1,36 @@
-// @use '../../styles/partials/mixins' as *;
-// @use '../../styles/partials/variables' as *;
-// @use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.home {
+    @include desktop {
+        @include display(row, space-between, nowrap);
+        gap: 16rem;
+    }
+
+    &__article {
+        @include desktop {
+            width: 50%;
+        }
+
+        &--social {
+            @include display(row, space-around, nowrap);
+            padding: 1rem;
+
+            @include desktop {
+                flex-direction: column;
+                width: 50%;
+            }
+        }
+    }
+
+    &__img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    &__link {
+        width: 5rem;
+        height: 5rem;
+    }
+}
