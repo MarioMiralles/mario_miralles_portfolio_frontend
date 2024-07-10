@@ -1,0 +1,37 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.form {
+
+    &__button {
+        padding: 1rem;
+        background-color: black;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        text-transform: uppercase;
+        box-shadow: -4px 4px 0 rgb(19, 19, 19);
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    &__textarea {
+        height: 20rem;
+        padding: 0.75rem;
+        background-color: rgb(50, 50, 50);
+        border-radius: 0.25rem;
+    }
+}
+
+input {
+    padding: 0.625rem;
+    background-color: rgb(50, 50, 50);
+    border-radius: 0.25rem;
+}
