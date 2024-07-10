@@ -8,7 +8,7 @@ import './HomePage.scss';
 
 const HomePage = () => {
   return (
-    <article className='home'>
+    <main className='home'>
       <h1 className='home__title'>👋 Welcome</h1>
       <p className='home__paragraph'>
         I'm <strong>Mario Miralles</strong>, a passionate Full-Stack Software Engineer. I enjoy building interesting applications that
@@ -21,7 +21,7 @@ const HomePage = () => {
       <p className='home__paragraph'>
         Feel free to explore my projects and get in touch if you'd like to collaborate or have any questions!
       </p>
-    </article>
+    </main>
   );
 }
 

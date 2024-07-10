@@ -7,7 +7,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    background-color: $background1;
     color: white;
     list-style-type: none;
 }
@@ -16,6 +15,46 @@ a {
     text-decoration: none;
 }
 
-.main {
+h1,
+h2,
+p {
+    padding-bottom: 1rem;
+
+    @include tablet {
+        padding-bottom: 2rem;
+    }
+}
+
+h1, h2 {
+    padding-top: 1rem;
+}
+
+html,
+nav {
+    background-color: $background1;
+}
+
+#root {
     padding: 1rem;
+    @include desktop{
+        padding: 0 3rem;
+    }
+}
+
+.app {
+    @include desktop {
+        padding: 0 2rem;
+    }
+}
+
+.nav, .home, .project, .contact {
+    max-width: 25rem;
+    margin: auto;
+
+    @include tablet {
+        max-width: 35rem;
+    }
+    @include desktop {
+        max-width: none;
+    }
 }

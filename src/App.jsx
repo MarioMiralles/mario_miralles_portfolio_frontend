@@ -15,7 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <main className="main">
+      <div className="app">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectList />} />
@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/contact" element={<ContactForm />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
-      </main>
+      </div>
     </BrowserRouter>
   );
 }

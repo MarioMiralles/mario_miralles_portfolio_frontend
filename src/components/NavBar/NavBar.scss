@@ -6,10 +6,9 @@
     @include display(column, center, nowrap);
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem;
     @include tablet {
         @include display(row, space-between, nowrap);
-        padding: 2rem 2rem 2rem 1rem;
+        padding: 2rem 0;
     }
 
     &__link {
@@ -29,7 +28,6 @@
     }
 
     &__logo {
-        width: 100vw;
-        max-width: 25rem;
+        width: 100%;
     }
 }
