@@ -35,37 +35,39 @@ const ContactForm = () => {
     };
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <main className='form__container'>
             <h1 className="form__title">📨 Get in touch</h1>
-            <div className="form__group">
-                <label>Name:</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="form__group">
-                <label>Email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-            </div>
-            <div className="form__group">
-                <label>Message:</label>
-                <textarea
-                className='form__textarea'
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                />
-            </div>
-            <button className="form__button" type="submit">Send</button>
-        </form>
+            <form className="form" onSubmit={handleSubmit}>
+                <div className="form__group">
+                    <label>Name:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form__group">
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form__group">
+                    <label>Message:</label>
+                    <textarea
+                        className='form__textarea'
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button className="form__button" type="submit">Send</button>
+            </form>
+        </main>
     );
 };
 

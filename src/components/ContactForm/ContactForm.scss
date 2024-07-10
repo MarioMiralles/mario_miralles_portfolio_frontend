@@ -3,6 +3,10 @@
 @use '../../styles/partials/typography' as *;
 
 .form {
+    @include desktop {
+        max-width: 60rem;
+        margin: auto;
+    }
 
     &__button {
         padding: 1rem;
@@ -13,6 +17,25 @@
         width: 100%;
         text-transform: uppercase;
         box-shadow: -4px 4px 0 rgb(19, 19, 19);
+        font-size: 1.25rem;
+
+        @include desktop {
+            width: 25%;
+            float: right;
+        }
+    }
+
+    &__container {
+        max-width: 25rem;
+        margin: auto;
+
+        @include tablet {
+            max-width: 35rem;
+        }
+
+        @include desktop {
+            max-width: none;
+        }
     }
 
     &__group {
@@ -23,10 +46,23 @@
     }
 
     &__textarea {
-        height: 20rem;
+        min-height: 20rem;
         padding: 0.75rem;
         background-color: rgb(50, 50, 50);
         border-radius: 0.25rem;
+        resize: vertical;
+        @include tablet {
+            font-size: 1.25rem;
+        }
+        @include desktop {
+            min-height: 14rem;
+        }
+    }
+
+    &__title {
+        @include desktop {
+            max-width: none;
+        }
     }
 }
 
@@ -34,4 +70,8 @@ input {
     padding: 0.625rem;
     background-color: rgb(50, 50, 50);
     border-radius: 0.25rem;
+
+    @include tablet {
+        font-size: 1.25rem;
+    }
 }

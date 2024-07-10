@@ -16,6 +16,10 @@
         padding: 0.5rem;
         display: flex;
         justify-content: center;
+
+        &-a {
+            text-transform: uppercase;
+        }
     }
 
     &__links {
