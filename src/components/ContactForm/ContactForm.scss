@@ -18,6 +18,10 @@
         text-transform: uppercase;
         box-shadow: -4px 4px 0 rgb(19, 19, 19);
         font-size: 1.25rem;
+        &:active {
+            transform: translate(-4px, 4px);
+            box-shadow: none;
+        }
 
         @include desktop {
             width: 25%;
@@ -46,20 +50,22 @@
     }
 
     &__textarea {
-        min-height: 20rem;
+        min-height: 16rem;
         padding: 0.75rem;
         background-color: rgb(50, 50, 50);
         border-radius: 0.25rem;
         resize: vertical;
         @include tablet {
             font-size: 1.25rem;
+            min-height: 12rem;
         }
         @include desktop {
-            min-height: 14rem;
+            min-height: 16rem;
         }
     }
 
     &__title {
+        padding-bottom: 0;
         @include desktop {
             max-width: none;
         }
