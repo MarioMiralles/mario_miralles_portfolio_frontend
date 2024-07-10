@@ -35,8 +35,9 @@ const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <form className="form" onSubmit={handleSubmit}>
+            <h1 className="form__title">📨 Get in touch</h1>
+            <div className="form__group">
                 <label>Name:</label>
                 <input
                     type="text"
@@ -45,7 +46,7 @@ const ContactForm = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form__group">
                 <label>Email:</label>
                 <input
                     type="email"
@@ -54,15 +55,16 @@ const ContactForm = () => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form__group">
                 <label>Message:</label>
                 <textarea
+                className='form__textarea'
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                 />
             </div>
-            <button type="submit">Send</button>
+            <button className="form__button" type="submit">Send</button>
         </form>
     );
 };
