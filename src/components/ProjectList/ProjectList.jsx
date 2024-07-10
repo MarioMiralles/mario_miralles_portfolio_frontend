@@ -5,6 +5,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './ProjectList.scss';
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
@@ -24,7 +26,15 @@ const ProjectList = () => {
       <h1>Projects</h1>
       <ul>
         {projects.map(project => (
-          <li key={project.id}>{project.title}</li>
+          <li key={project.id}>
+            <Link to={`/projects/${project.id}`}>
+              <h2>{project.title}</h2>
+              <p>{project.description.substring(0, 100)}...</p>
+              {project.images.length > 0 && (
+                <img src={project.images[0].image} alt={project.title} />
+              )}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

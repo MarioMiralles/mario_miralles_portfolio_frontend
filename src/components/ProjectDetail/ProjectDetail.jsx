@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './ProjectDetail.scss';
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -27,7 +28,12 @@ const ProjectDetail = () => {
     <div>
       <h1>{project.title}</h1>
       <p>{project.description}</p>
-      <a href={project.link}>Project Link</a>
+      <a href={project.link} target='_blank' rel='noopener noreferrer'>View Project</a>
+      <div className="images">
+        {project.images.map(image => (
+          <img key={image.id} src={image.image} alt={project.title} />
+        ))}
+      </div>
     </div>
   );
 };
