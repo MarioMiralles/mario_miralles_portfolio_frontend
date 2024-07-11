@@ -24,7 +24,7 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/contact/', formData)
+        axios.post('http://3.142.122.193:8000/api/contact/', formData)
             .then(response => {
                 alert('Message sent successfully! Please allow up to 48 hours for a response to the email provided.');
                 setFormData({ name: '', email: '', message: '' });
