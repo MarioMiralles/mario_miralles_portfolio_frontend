@@ -7,7 +7,9 @@
     margin: auto;
 
     &__image {
-        width: 100%;
+        display: block;
+        margin: auto;
+        width: 90%;
     }
 
     &__item {
