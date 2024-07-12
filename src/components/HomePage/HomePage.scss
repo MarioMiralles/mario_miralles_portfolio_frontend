@@ -57,10 +57,4 @@
             line-height: 1.5rem;
         }
     }
-
-    &__title {
-        @include tablet {
-            font-size: 2rem;
-        }
-    }
 }

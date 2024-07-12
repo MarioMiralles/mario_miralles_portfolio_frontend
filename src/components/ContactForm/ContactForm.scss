@@ -59,9 +59,6 @@
             font-size: 1.25rem;
             min-height: 12rem;
         }
-        @include desktop {
-            min-height: 16rem;
-        }
     }
 
     &__title {
